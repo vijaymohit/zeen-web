@@ -307,9 +307,12 @@ header nav ul {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header nav ul li:hover {
+header nav ul li:hover a{
   font-weight: 700;
+  color: var(--black);
 }
+
+
 
 header .nav-btn {
   padding: 20px 36px;

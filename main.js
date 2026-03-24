@@ -75,7 +75,7 @@ function silderFun(){
 
 
       $('.solutions-card-main').owlCarousel({
-          // loop:true,
+          loop:true,
           // center:true,
           items:2,
           margin:20,
