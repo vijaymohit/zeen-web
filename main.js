@@ -3,7 +3,6 @@
 // wow js end
 
 // nav bar js start
-console.log("hello world")
 let menu = document.querySelector('.menu')
 let close = document.querySelector('.close')
 let navUl = document.querySelector('header nav ul');
@@ -19,7 +18,6 @@ const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
   let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  console.log('currentScroll',currentScroll)
   if(currentScroll===0){
     header.style.backgroundColor = '#1c1c1c1a';
     header.style.boxShadow = 'none';
@@ -188,10 +186,21 @@ document.querySelectorAll('.contact-us-link').forEach(link => {
   });
 });
 //link button add end
+function toggleChat() {
+  const chat = document.getElementById("chatBox");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
 
 
-
-
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+setTimeout(() => {
+  openPopup()
+}, 3000);
+function openPopup(){
+  document.getElementById("popup").style.display = 'flex'
+}
 // Tabs logic for .technology-stack start
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.technology-stack-container');
@@ -226,9 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // location js code start
-console.log(document.querySelector('.map-main'))
 const mapContainer = document.querySelector('.map-main')
-  console.log("el")
   // Ensure element has height
  
   var map = L.map(mapContainer).setView([26.8932052109276, 75.74315267597115], 15);
@@ -272,7 +279,25 @@ const mapContainer = document.querySelector('.map-main')
 
 // location js code end
 
+  const accordionItems = document.querySelectorAll(".accordion-item");
+  console.log("accordionItems",accordionItems)
+  accordionItems.forEach((item) => {
+    const button = item.querySelector(".accordion-button");
+    const collapseEl = item.querySelector(".accordion-collapse");
 
+    item.addEventListener("mouseenter", () => {
+      const bsCollapse = new bootstrap.Collapse(collapseEl, {
+        toggle: true,
+      });
+    });
+
+    item.addEventListener("mouseleave", () => {
+      const bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    });
+  });
 
 //typing in home page start
 

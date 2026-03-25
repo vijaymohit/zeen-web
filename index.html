@@ -25,11 +25,279 @@
       href="assets/images/favicon-16x16.ico"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body class="w-full">
     <main class="">
-      <div class="whatapp">
-        <img src="assets/images/whatsapp.svg" class="cursor-pointer" />
+      <div id="popup" class="popup-box-overlay">
+        <div class="popup-box">
+          <!-- LEFT -->
+          <div class="popup-left">
+            <h2>Let’s Build Something <span>Great Together</span></h2>
+            <p>
+              Have a <strong>question</strong> or project in mind? We’d love to
+              hear from you. Our team is dedicated to providing transparent and
+              actionable insights to help your <strong>business grow.</strong>
+            </p>
+
+            <div class="info-box">
+              <p>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.666 4.66675H9.33268C5.33268 4.66675 2.66602 6.66675 2.66602 11.3334V20.6667C2.66602 25.3334 5.33268 27.3334 9.33268 27.3334H22.666C26.666 27.3334 29.3327 25.3334 29.3327 20.6667V11.3334C29.3327 6.66675 26.666 4.66675 22.666 4.66675ZM23.2927 12.7867L19.1194 16.1201C18.2393 16.8267 17.1193 17.1734 15.9993 17.1734C14.8793 17.1734 13.746 16.8267 12.8793 16.1201L8.70602 12.7867C8.27935 12.4401 8.21268 11.8001 8.54602 11.3734C8.89268 10.9467 9.51935 10.8667 9.94602 11.2134L14.1193 14.5467C15.1327 15.3601 16.8527 15.3601 17.866 14.5467L22.0394 11.2134C22.466 10.8667 23.106 10.9334 23.4394 11.3734C23.786 11.8001 23.7193 12.4401 23.2927 12.7867Z"
+                    fill="#66AAFB"
+                  />
+                </svg>
+
+                hello@zeenweb.com
+              </p>
+              <p>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.4927 14.3332C22.9194 14.3332 22.466 13.8666 22.466 13.3066C22.466 12.8132 21.9727 11.7866 21.146 10.8932C20.3327 10.0266 19.4393 9.51989 18.6927 9.51989C18.1193 9.51989 17.666 9.05322 17.666 8.49322C17.666 7.93322 18.1327 7.46655 18.6927 7.46655C20.026 7.46655 21.426 8.18655 22.6527 9.47989C23.7993 10.6932 24.5327 12.1999 24.5327 13.2932C24.5327 13.8666 24.066 14.3332 23.4927 14.3332Z"
+                    fill="#3BC695"
+                  />
+                  <path
+                    d="M28.3064 14.3334C27.733 14.3334 27.2797 13.8667 27.2797 13.3067C27.2797 8.57341 23.4264 4.73341 18.7064 4.73341C18.133 4.73341 17.6797 4.26675 17.6797 3.70675C17.6797 3.14675 18.133 2.66675 18.693 2.66675C24.5597 2.66675 29.333 7.44008 29.333 13.3067C29.333 13.8667 28.8664 14.3334 28.3064 14.3334Z"
+                    fill="#3BC695"
+                  />
+                  <path
+                    d="M14.7327 19.9334L12.266 22.4001C11.746 22.9201 10.9193 22.9201 10.386 22.4134C10.2393 22.2667 10.0927 22.1334 9.94602 21.9867C8.57268 20.6001 7.33268 19.1467 6.22602 17.6267C5.13268 16.1067 4.25268 14.5867 3.61268 13.0801C2.98602 11.5601 2.66602 10.1067 2.66602 8.72008C2.66602 7.81341 2.82602 6.94675 3.14602 6.14675C3.46602 5.33342 3.97268 4.58675 4.67935 3.92008C5.53268 3.08008 6.46602 2.66675 7.45268 2.66675C7.82602 2.66675 8.19935 2.74675 8.53268 2.90675C8.87935 3.06675 9.18602 3.30675 9.42602 3.65341L12.5194 8.01342C12.7593 8.34675 12.9327 8.65341 13.0527 8.94675C13.1727 9.22675 13.2393 9.50675 13.2393 9.76008C13.2393 10.0801 13.146 10.4001 12.9593 10.7067C12.786 11.0134 12.5327 11.3334 12.2127 11.6534L11.1993 12.7067C11.0527 12.8534 10.986 13.0267 10.986 13.2401C10.986 13.3467 10.9993 13.4401 11.026 13.5467C11.066 13.6534 11.106 13.7334 11.1327 13.8134C11.3727 14.2534 11.786 14.8267 12.3727 15.5201C12.9727 16.2134 13.6127 16.9201 14.306 17.6267C14.4393 17.7601 14.586 17.8934 14.7193 18.0267C15.2527 18.5467 15.266 19.4001 14.7327 19.9334Z"
+                    fill="#3BC695"
+                  />
+                  <path
+                    d="M29.2941 24.44C29.2941 24.8133 29.2274 25.2 29.0941 25.5733C29.0541 25.68 29.0141 25.7866 28.9608 25.8933C28.7341 26.3733 28.4408 26.8266 28.0541 27.2533C27.4008 27.9733 26.6808 28.4933 25.8674 28.8266C25.8541 28.8266 25.8408 28.84 25.8274 28.84C25.0408 29.16 24.1874 29.3333 23.2674 29.3333C21.9074 29.3333 20.4541 29.0133 18.9208 28.36C17.3874 27.7066 15.8541 26.8266 14.3341 25.72C13.8141 25.3333 13.2941 24.9466 12.8008 24.5333L17.1608 20.1733C17.5341 20.4533 17.8674 20.6666 18.1474 20.8133C18.2141 20.84 18.2941 20.88 18.3874 20.92C18.4941 20.96 18.6008 20.9733 18.7208 20.9733C18.9474 20.9733 19.1208 20.8933 19.2674 20.7466L20.2808 19.7466C20.6141 19.4133 20.9341 19.16 21.2408 19C21.5474 18.8133 21.8541 18.72 22.1874 18.72C22.4408 18.72 22.7074 18.7733 23.0008 18.8933C23.2941 19.0133 23.6008 19.1866 23.9341 19.4133L28.3474 22.5466C28.6941 22.7866 28.9341 23.0666 29.0808 23.4C29.2141 23.7333 29.2941 24.0666 29.2941 24.44Z"
+                    fill="#3BC695"
+                  />
+                </svg>
+
+                +91 9876543210
+              </p>
+              <p>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.0001 2.66663C8.65341 2.66663 2.66675 8.65329 2.66675 16C2.66675 23.3466 8.65341 29.3333 16.0001 29.3333C23.3467 29.3333 29.3334 23.3466 29.3334 16C29.3334 8.65329 23.3467 2.66663 16.0001 2.66663ZM21.8001 20.76C21.6134 21.08 21.2801 21.2533 20.9334 21.2533C20.7601 21.2533 20.5867 21.2133 20.4267 21.1066L16.2934 18.64C15.2667 18.0266 14.5067 16.68 14.5067 15.4933V10.0266C14.5067 9.47996 14.9601 9.02663 15.5067 9.02663C16.0534 9.02663 16.5067 9.47996 16.5067 10.0266V15.4933C16.5067 15.9733 16.9067 16.68 17.3201 16.92L21.4534 19.3866C21.9334 19.6666 22.0934 20.28 21.8001 20.76Z"
+                    fill="#898A8D"
+                  />
+                </svg>
+
+                Response within 24 hours
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="popup-right">
+            <h3>
+              <strong>Partner With Experts</strong> Who Leverage
+              <span>AI & Tech To Transform</span> Ideas Into Market-Leading
+              Solutions.
+            </h3>
+
+            <form>
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Mobile Number" />
+              <textarea placeholder="Message"></textarea>
+
+              <div class="file-upload">
+                <div class="uplode-btn">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                      stroke="#595959"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 12H16"
+                      stroke="#595959"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12 16V8"
+                      stroke="#595959"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>Add File</span>
+                </div>
+                <span>No file choosen</span>
+                <input type="file" />
+              </div>
+
+              <button type="submit" class="btn-custom btn-yellow">
+                Let’s Connect
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12"
+                    stroke="#121212"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M13 11L21.2 2.80005"
+                    stroke="#121212"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21.9999 6.83V2H17.1699"
+                    stroke="#121212"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Close -->
+          <span class="close-btn" onclick="closePopup()">✕</span>
+        </div>
+      </div>
+
+      <!-- Chatbox -->
+      <div class="chat-container" id="chatBox">
+        <div class="chat-header">
+          <div class="d-flex align-items-center chat-heading">
+            <img src="assets/images/favicon.ico" />
+            <h4>Chat Support</h4>
+          </div>
+          <button
+            onclick="toggleChat()"
+            style="
+              background: none;
+              border: none;
+              color: white;
+              cursor: pointer;
+            "
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="chat-body">
+          <div class="message bot">Hello 👋 How can I help you?</div>
+          <div class="message user">I need help!</div>
+        </div>
+
+        <div class="chat-footer">
+          <input type="text" placeholder="Type a message..." />
+          <button>
+            <!-- Send Icon SVG -->
+            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+              <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- contact support pop button -->
+      <!-- Floating circle + hover actions -->
+      <div class="chat-fab-wrapper">
+        <!-- 3 buttons revealed on hover -->
+        <div class="chat-actions">
+          <div class="chat-action-btn" onclick="toggleChat()">
+            <!-- Chat icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M2 3h20v13H7l-5 5V3z" />
+            </svg>
+            
+          </div>
+
+          <div class="chat-action-btn whatapp">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 2.91005C16.0831 1.98416 14.991 1.25002 13.7875 0.750416C12.584 0.250812 11.2931 -0.00426317 9.99 5.38951e-05C4.53 5.38951e-05 0.0800002 4.45005 0.0800002 9.91005C0.0800002 11.6601 0.54 13.3601 1.4 14.8601L0 20.0001L5.25 18.6201C6.7 19.4101 8.33 19.8301 9.99 19.8301C15.45 19.8301 19.9 15.3801 19.9 9.92005C19.9 7.27005 18.87 4.78005 17 2.91005ZM9.99 18.1501C8.51 18.1501 7.06 17.7501 5.79 17.0001L5.49 16.8201L2.37 17.6401L3.2 14.6001L3 14.2901C2.17755 12.9771 1.74092 11.4593 1.74 9.91005C1.74 5.37005 5.44 1.67005 9.98 1.67005C12.18 1.67005 14.25 2.53005 15.8 4.09005C16.5676 4.85392 17.1759 5.7626 17.5896 6.76338C18.0033 7.76417 18.2142 8.83714 18.21 9.92005C18.23 14.4601 14.53 18.1501 9.99 18.1501ZM14.51 11.9901C14.26 11.8701 13.04 11.2701 12.82 11.1801C12.59 11.1001 12.43 11.0601 12.26 11.3001C12.09 11.5501 11.62 12.1101 11.48 12.2701C11.34 12.4401 11.19 12.4601 10.94 12.3301C10.69 12.2101 9.89 11.9401 8.95 11.1001C8.21 10.4401 7.72 9.63005 7.57 9.38005C7.43 9.13005 7.55 9.00005 7.68 8.87005C7.79 8.76005 7.93 8.58005 8.05 8.44005C8.17 8.30005 8.22 8.19005 8.3 8.03005C8.38 7.86005 8.34 7.72005 8.28 7.60005C8.22 7.48005 7.72 6.26005 7.52 5.76005C7.32 5.28005 7.11 5.34005 6.96 5.33005H6.48C6.31 5.33005 6.05 5.39005 5.82 5.64005C5.6 5.89005 4.96 6.49005 4.96 7.71005C4.96 8.93005 5.85 10.1101 5.97 10.2701C6.09 10.4401 7.72 12.9401 10.2 14.0101C10.79 14.2701 11.25 14.4201 11.61 14.5301C12.2 14.7201 12.74 14.6901 13.17 14.6301C13.65 14.5601 14.64 14.0301 14.84 13.4501C15.05 12.8701 15.05 12.3801 14.98 12.2701C14.91 12.1601 14.76 12.1101 14.51 11.9901Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+
+          <div class="chat-action-btn" onclick="openPopup()">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Main circular button -->
+
+        <div class="chat-fab">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.008-3.018a1.502 1.502 0 0 1 2.522 1.159v.024a1.44 1.44 0 0 1-1.493 1.418 1 1 0 0 0-1.037.999V14a1 1 0 1 0 2 0v-.539a3.44 3.44 0 0 0 2.529-3.256 3.502 3.502 0 0 0-7-.255 1 1 0 0 0 2 .076c.014-.398.187-.774.48-1.044Zm.982 7.026a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2h-.01Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
       </div>
 
       <header class="header wow animate__animated animate__fadeInDown">
@@ -61,7 +329,7 @@
                   <a href="about.html">About us</a>
                 </li>
                 <li class="">
-                   <a href="website-development-company-jaipur.html">Services</a>
+                  <a href="website-development-company-jaipur.html">Services</a>
                 </li>
                 <li>Portfolio</li>
                 <li>Testimonials</li>
@@ -408,7 +676,7 @@
               </div>
 
               <div class="w-100">
-                <button  class="btn-custom btn-yellow btn-yellow-p54">
+                <button class="btn-custom btn-yellow btn-yellow-p54">
                   <span><a href="about.html">Our Mission</a></span>
                   <svg
                     width="24"
