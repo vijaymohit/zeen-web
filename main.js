@@ -150,24 +150,24 @@ function silderFun(){
         2000:{ items:5 }
       }
       })
-       $('.projects').owlCarousel({
-          loop:true,
-          margin:20,
-          nav:false,
-          dots:false,
-          autoplay:true,
-          center:true,
-          autoplayTimeout:3000,
-          autoplayHoverPause: true,
-          smartSpeed: 500,  
-          URLhashListener:true,  
-            items:1,    
-          navText: [
-        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
-      ],
+      //  $('.projects').owlCarousel({
+      //     loop:true,
+      //     margin:20,
+      //     nav:false,
+      //     dots:false,
+      //     autoplay:true,
+      //     center:true,
+      //     autoplayTimeout:3000,
+      //     autoplayHoverPause: true,
+      //     smartSpeed: 500,  
+      //     URLhashListener:true,  
+      //       items:1,    
+      //     navText: [
+      //   '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+      //     '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+      // ],
        
-      })
+      // })
 }
 $(window).on('load resize', silderFun);
 //slider run js end
@@ -301,13 +301,51 @@ const mapContainer = document.querySelector('.map-main')
 
 //typing in home page start
 
-let typed = new Typed('#typed', {
-  strings: ["Web Development", "App Development", "AI Chatbots"],
-  typeSpeed: 150,
-  backSpeed: 70,
-  loop: true,
-  showCursor: false
-});
+const texts = ["Web Development", "App Development", "AI Chatbots"];
+let i = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+
+function type() {
+  const el = document.getElementById("typed");
+
+  currentText = texts[i];
+
+  if (!isDeleting) {
+    charIndex++;
+
+    el.textContent = currentText.substring(0, charIndex);
+
+    // ✅ Trigger fade-in when a WORD COMPLETES (space detected)
+    if (charIndex < currentText.length && currentText.charAt(charIndex - 1) === " ") {
+      el.classList.remove("fade-in");
+      void el.offsetWidth; // Trigger reflow
+      el.classList.add("fade-in");
+    }
+
+    if (charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, 1000); // Pause at end before deleting
+      return;
+    }
+
+  } else {
+    charIndex--;
+
+    el.textContent = currentText.substring(0, charIndex);
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      i = (i + 1) % texts.length;
+    }
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
+
 
 //typing in home page end
 

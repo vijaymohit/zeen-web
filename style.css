@@ -73,7 +73,22 @@ a {
 .mobile {
   display: none;
 }
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
 
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ----- TYPOGRAPHY ----- */
 h1,
 .h1 {
@@ -1176,22 +1191,64 @@ header .nav-btn {
   position: relative;
 }
 
+/* Container for all projects */
 .projects {
-  /* display: grid; */
-  /* grid-template-columns: repeat(2, 1fr); */
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 32px; */
+  /* padding: 20px; */
 }
 
+/* Base card style */
 .project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 44px;
+  position: sticky;
+  bottom: 100px; /* stick to bottom initially */
   display: flex;
   align-items: center;
   background-color: var(--dark-bg);
+  border-radius: 44px;
   padding: 32px;
   gap: 32px;
+  overflow: hidden;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  border: 2px solid var(--white);
 }
+
+/* Stacked scaling for first few cards */
+.project-card:nth-child(1) {
+  transform: scale(1) translateY(0);
+  z-index: 10;
+}
+.project-card:nth-child(2) {
+  transform: scale(0.98) translateY(20px);
+  z-index: 9;
+}
+.project-card:nth-child(3) {
+  transform: scale(0.95) translateY(40px);
+  z-index: 8;
+}
+.project-card:nth-child(4) {
+  transform: scale(0.92) translateY(60px);
+  z-index: 7;
+}
+
+/* Image inside card */
+.project-card .project-image {
+  flex: 0 0 300px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+/* Overlay / text area */
+.project-card .overlay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Optional: card hover effect */
+
 .project-card .project-image {
   flex-basis: 511px;
 }
@@ -2954,6 +3011,32 @@ form button:hover {
 }
 
 /* Small laptops / large tablets */
+@media (max-width:1440px) and (min-width:1025px){
+  .popup-box{
+    height: 666px;
+    width: 798px;
+    padding: 30px;
+  }
+  .popup-left{padding: 20px; gap: 10px;}
+  .popup-left h2,.popup-left h2 span{
+    font-size: 40px;
+  }
+  .popup-left p,.popup-left p strong{
+    font-size: 18px;
+  }
+  .info-box{
+    padding:15px 20px;
+  }
+  .info-box p {padding: 15px 0;}
+  .popup-right h3{font-size: 20px;line-height: 32px;}
+  .popup-right{gap: 10px;}
+  .popup-right form input{height: 50px;}
+  .popup-right form{gap: 10px;}
+  .popup-right form textarea{height: 150px;}
+  .popup-right .file-upload span, .popup-right .file-upload .uplode-btn{height: 50px;}
+  .popup-right form button{padding: 10px 20px; font-size: 16px;}
+  .popup-right .file-upload span,.popup-right .file-upload .uplode-btn span{font-size: 16px;}
+}
 @media (max-width: 1024px) {
   .popup-box {
     max-width: 95%;
@@ -3933,7 +4016,7 @@ form button:hover {
     padding-bottom: 0 !important;
   }
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 30px;
   }
 
