@@ -6,8 +6,11 @@
 let menu = document.querySelector('.menu')
 let close = document.querySelector('.close')
 let navUl = document.querySelector('header nav ul');
+let navLink = document.querySelectorAll('header nav ul li a');
+
 menu.addEventListener('click',()=>{
   navUl.classList.toggle('active');
+
 })
 close.addEventListener('click',()=>{
 navUl.classList.toggle('active');

@@ -77,8 +77,6 @@ a {
   animation: fadeIn 0.8s ease;
 }
 
-
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -129,6 +127,10 @@ p,
 .line-dashed {
   width: 100%;
   border: 1px dashed var(--gray);
+}
+.random{display: block;}
+@media (min-width:3000px) {
+  .random{display: none;}
 }
 
 /* ----- BUTTONS ----- */
@@ -203,7 +205,9 @@ p,
   line-height: 32px;
   font-weight: 400;
 }
-
+.header nav ul li .active {
+  font-weight: 600;
+}
 /* ----- LAYOUT UTILITIES ----- */
 .section {
   padding: 5rem 0;
@@ -278,151 +282,152 @@ p,
 
 /* ----- HEADER CSS ----- */
 /* Wrapper for the main circle and child buttons */
-    .chat-fab-wrapper {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      z-index: 999;
-      height: 200px;
-    }
+.chat-fab-wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  height: 200px;
+}
 
-    /* Main circular button */
-    .chat-fab {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: var(--shadow);
-      display: flex;
-      transform: translateY(120px) rotate(0deg);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.5s ease all;
-    }
-    .chat-fab-wrapper:hover .chat-fab{
-        transform: translateY(140px) rotate(360deg);
-        
-        }
+/* Main circular button */
+.chat-fab {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: var(--shadow);
+  display: flex;
+  transform: translateY(120px) rotate(0deg);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
+.chat-fab-wrapper:hover .chat-fab {
+  transform: translateY(140px) rotate(360deg);
+}
 
-    .chat-fab svg {
-      fill: var(--white);
-      width: 40px;
-      height: 40px;
-    }
-    .chat-fab svg path{
-      stroke: var(--white);
-    }
+.chat-fab svg {
+  fill: var(--white);
+  width: 40px;
+  height: 40px;
+}
+.chat-fab svg path {
+  stroke: var(--white);
+}
 
-    
+/* Container for the 3 buttons that appear on hover */
+.chat-actions {
+  position: absolute;
+  bottom: 70px; /* place above main button */
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
 
-    /* Container for the 3 buttons that appear on hover */
-    .chat-actions {
-      position: absolute;
-      bottom: 70px; /* place above main button */
-      right: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
+/* Show actions on hover of wrapper or actions themselves */
+.chat-fab-wrapper:hover .chat-actions,
+.chat-actions:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 
-    /* Show actions on hover of wrapper or actions themselves */
-    .chat-fab-wrapper:hover .chat-actions,
-    .chat-actions:hover {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
+/* Individual small buttons */
+.chat-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--black-second);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-action-btn svg {
+  fill: white;
+}
+.chat-action-btn:nth-child(1) {
+  background-color: rgb(0, 132, 255);
+}
+.chat-action-btn:nth-child(3) {
+  background-color: var(--dark-bg);
+}
+.chat-action-btn.whatapp {
+  background: #2dc95b;
+}
+.chat-action-btn svg {
+  width: 30px;
+  height: 30px;
+}
+.chat-action-btn-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-navy);
+}
 
-    /* Individual small buttons */
-    .chat-action-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--black-second);
-      box-shadow: var(--shadow);
-      font-size: 13px;
-      font-weight: 500;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease,
-        box-shadow 0.2s ease;
-      height: 60px;
-      width: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .chat-action-btn svg{fill: white;}
-    .chat-action-btn:nth-child(1){
-      background-color: rgb(0, 132, 255);
-    }
-    .chat-action-btn:nth-child(3){
-      background-color: var(--dark-bg);
-    }
-    .chat-action-btn.whatapp{
-        background: #2dc95b;
-    }
-    .chat-action-btn svg{
-      width: 30px;
-      height: 30px;
-    }
-    .chat-action-btn-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--dark-navy);
-    }
-    
-    .chat-action-btn-icon svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--white);
-    }
-    .chat-action-btn-icon svg path{
-      stroke: var(--white);
-    }
+.chat-action-btn-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--white);
+}
+.chat-action-btn-icon svg path {
+  stroke: var(--white);
+}
 
-    .chat-action-btn span {
-      color: var(--gray-second);
-    }
+.chat-action-btn span {
+  color: var(--gray-second);
+}
 
-    .chat-action-btn:hover {
-      
-      transform: translateX(-5px);
-      box-shadow: var(--shadow-hover);
-    }
+.chat-action-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: var(--shadow-hover);
+}
 
-    /* Responsive: move slightly up on small screens */
-    @media (max-width: 768px) {
-      .chat-fab-wrapper {
-        right: 16px;
-        bottom: -10px;
-      }
-      .chat-fab{
-        height: 40px;
-        width: 40px;
-      }
-      .chat-fab svg{
-        height: 30px;
-        width: 30px;
-      }
-      .chat-action-btn{
-         height: 40px;
-        width: 40px;
-      }
-    }
-
+/* Responsive: move slightly up on small screens */
+@media (max-width: 768px) {
+  .chat-fab-wrapper {
+    right: 16px;
+    bottom: -10px;
+  }
+  .chat-fab {
+    height: 40px;
+    width: 40px;
+  }
+  .chat-fab svg {
+    height: 30px;
+    width: 30px;
+  }
+  .chat-action-btn {
+    height: 40px;
+    width: 40px;
+  }
+}
 
 header {
   z-index: 99;
@@ -616,9 +621,9 @@ header .nav-btn {
   background-color: white;
   overflow: hidden;
   padding: 60px 0 120px 0;
+  position: relative;
 }
 .about-us .container {
-  position: relative;
 }
 .about-us .container .about-us-main {
   /* height: 90vh; */
@@ -629,14 +634,15 @@ header .nav-btn {
 
 .about-us .about-us-random-1 {
   position: absolute;
-  top: -60px;
-  right: -60px;
+  top: 0px;
+  right:-58px;
 }
+.about-us .about-us-random-1 svg{border: 0; stroke-width: 0;}
 
 .about-us .about-us-random-2 {
   position: absolute;
-  bottom: -115px;
-  left: -60px;
+  bottom: -50px;
+  left: 0px;
 }
 
 .about-us .container .about-us-text,
@@ -749,7 +755,7 @@ header .nav-btn {
 .services .services-random {
   position: absolute;
   left: 0;
-  top: -120px;
+  top: -110px;
   z-index: -1;
   width: 100%;
   display: flex;
@@ -757,7 +763,7 @@ header .nav-btn {
 }
 
 .services .services-random img {
-  max-width: 1500px;
+  max-width: 3000px;
   width: 100%;
   height: 959px !important;
 }
@@ -845,8 +851,9 @@ header .nav-btn {
   flex-direction: column;
   justify-content: space-between;
 }
-.process-timeline .container .process-timeline-random {
-  transform: translateX(-80px);
+.process-timeline  .process-timeline-random {
+  /* transform: translateX(-80px); */
+  margin-top: 100px;
 }
 .process-timeline .container .heading {
   margin-bottom: 136px;
@@ -1069,7 +1076,7 @@ header .nav-btn {
 }
 .choose-us-bg img {
   width: 100%;
-  max-width: 1500px;
+  max-width: 3000px;
   height: 998px !important;
 }
 
@@ -1211,7 +1218,7 @@ header .nav-btn {
   gap: 32px;
   overflow: hidden;
   transition: transform 0.3s ease, z-index 0.3s ease;
-  border: 2px solid var(--white);
+  /* border: 2px solid var(--white); */
 }
 
 /* Stacked scaling for first few cards */
@@ -1324,6 +1331,7 @@ header .nav-btn {
 }
 
 /* ----- FAQ SECTION ----- */
+/* ----- FAQ SECTION ----- */
 .frequently-asked-questions {
   position: relative;
   padding: 42px 0 80px 0;
@@ -1381,14 +1389,14 @@ header .nav-btn {
 }
 
 .accordion-button::after {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
-  background: url('assets/images/icons/plus.svg') no-repeat center;
+  background: url("assets/images/icons/plus.svg") no-repeat center;
 }
 
 .accordion-button:not(.collapsed)::after {
-  background: url('assets/images/icons/minus.svg') no-repeat center;
+  background: url("assets/images/icons/minus.svg") no-repeat center;
 }
 /* ----- CONTACT US SECTION ----- */
 .contact-us {
@@ -1544,7 +1552,7 @@ header .nav-btn {
 .contact-us-main .container .contact-us-form {
   background-color: #f5f5f77d;
   border-radius: 30px;
-  padding: 40px 50px;
+  padding: 40px 34px;
   display: flex;
   flex-direction: column;
   gap: 44px;
@@ -1596,7 +1604,7 @@ header .nav-btn {
   .form-filed
   input::placeholder {
   color: var(--label-color);
-  padding-left: 11px;
+  /* padding-left: 11px; */
   margin-bottom: 10px;
 }
 
@@ -1606,24 +1614,27 @@ header .nav-btn {
   border: none;
   border-bottom: 1px solid var(--black-second);
   outline: none;
-  height: 50px;
+  height: 70px;
   background-color: transparent;
   /* padding-bottom: 10px;
   margin-bottom: 15px; */
 }
 
 .contact-us-main .container .contact-us-form button {
-  background-color: var(--dark-bg);
-  color: white;
+  background-color: var(--orange);
+  color: var(--black-second);
   width: fit-content;
   padding: 0;
   height: 50px;
   width: 172px;
   display: flex;
   justify-content: center;
-  font-size: 15px;
+  font-size: 18px;
+  
 }
-
+.contact-us-main .container .contact-us-form button svg path{
+  stroke: var(--black-second);
+}
 /* ----- FOOTER ----- */
 footer .container .footer-main {
   padding: 80px 0;
@@ -1751,7 +1762,7 @@ footer .ft-bottom p {
   width: 100%;
   height: 549px;
   position: relative;
-  max-width: 1500px;
+  max-width: 3000px;
   margin: 0 auto;
 }
 .home-hero-image .home-hero-image-random {
@@ -1773,14 +1784,12 @@ footer .ft-bottom p {
 }
 .our-mission {
   padding: 60px 0;
-}
-.our-mission .container {
   position: relative;
 }
 .our-mission .our-mission-random {
   position: absolute;
-  left: -60px;
-  bottom: -149px;
+  left: 0px;
+  bottom: -130px;
 }
 .our-mission-main {
   gap: 19px;
@@ -1817,7 +1826,7 @@ footer .ft-bottom p {
   justify-content: center;
 }
 .our-story .our-story-bg img {
-  max-width: 1500px;
+  max-width: 3000px;
   height: 1437px;
   width: 100%;
 }
@@ -1985,7 +1994,7 @@ footer .ft-bottom p {
   z-index: -1;
   background-color: var(--orange-second);
   display: block;
-  height: 448px;
+  height: 434px;
 }
 
 .about-consultation-main {
@@ -1996,7 +2005,7 @@ footer .ft-bottom p {
 }
 
 .about-consultation-main .about-consultation-text {
-  padding: 52px 0px 29px 0;
+  padding: 52px 0px 20px 0;
   width: 100%;
   gap: 29px;
   display: flex;
@@ -2010,7 +2019,7 @@ footer .ft-bottom p {
 .about-consultation-main .about-consultation-text p {
   margin-bottom: 0;
 }
-.about-consultation-main .about-consultation-text .heading h2 {
+.about-consultation-main .about-consultation-text .heading h2,.about-consultation-main .about-consultation-text .heading h2 span {
   font-size: 48px;
   line-height: 70px;
   margin-bottom: 0;
@@ -2129,6 +2138,7 @@ footer .ft-bottom p {
   .our-story,
   .about-consultation-main .about-consultation-text {
     padding: 30px 0;
+    gap: 20px;
   }
   .about-us-main h2 {
     font-size: 40px !important;
@@ -2188,8 +2198,10 @@ footer .ft-bottom p {
   .home-hero-image {
     height: 100%;
   }
+  
   .our-mission {
     padding: 30px 0;
+     overflow: hidden;
   }
   .our-mission-main .our-mission-image,
   .our-mission-main .our-mission-text {
@@ -2222,6 +2234,7 @@ footer .ft-bottom p {
   .about-consultation-main .about-consultation-text {
     flex-basis: 100%;
     padding: 0;
+    gap: 15px;
   }
   .about-consultation-btn {
     flex-wrap: wrap;
@@ -2319,7 +2332,7 @@ footer .ft-bottom p {
 }
 .website-development-company-main .home-section .home-section-random {
   position: absolute;
-  right: -60px;
+  right: 0px;
   bottom: 0;
 }
 .website-development-company-main .home-section .container .home-section-main {
@@ -2424,7 +2437,7 @@ footer .ft-bottom p {
 .website-development-services .website-development-services-random img {
   width: 100%;
   height: 100%;
-  max-width: 1500px;
+  max-width: 3000px;
   /* object-fit: contain; */
 }
 .website-development-services .container .website-development-services-main {
@@ -2590,14 +2603,13 @@ footer .ft-bottom p {
 
 .process {
   background-color: var(--gray-six);
-}
-.process .container {
   position: relative;
 }
+
 .process .process-random {
   position: absolute;
-  top: -169px;
-  left: -144px;
+  top: -90px;
+  left: 0px;
 }
 
 .process .heading {
@@ -2661,6 +2673,8 @@ footer .ft-bottom p {
 
 .launch-website {
   position: relative;
+  background-color: var(--dark-bg);
+
 }
 .launch-website .container .launch-website-main {
   padding: 80px 0;
@@ -2683,10 +2697,11 @@ footer .ft-bottom p {
   margin-bottom: 0px;
   text-align: start;
 }
+.launch-website .container .heading h2{color: white;}
 .launch-website .container p {
   font-size: 20px;
   line-height: 32px;
-  color: var(--black);
+  color: var(--white);
   font-weight: 300;
   margin-bottom: 0;
 }
@@ -2800,63 +2815,61 @@ footer .ft-bottom p {
   padding: 10px;
   cursor: pointer;
 }
-/* Overlay */
-
+/* pop up box css start  */
 .popup-box-overlay {
+  height: 100vh;
+  width: 100%;
+  background-color: #00000091;
+  backdrop-filter: blur(10px);
+  z-index: 999;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 999;
-  align-items: center;
-  justify-content: center;
   display: none;
-  background-color: #0000001f;
 }
 .popup-box {
-  max-width: 1349px;
-  max-height: 900px;
-  height: 800px;
-  display: flex;
   background-color: white;
-  gap: 18px;
-  padding: 36px 36px 40px 44px;
-  border-radius: 54px;
+  width: 63.54vw;
+  height: 86.67vh;
+  padding: 36px 40px 44px 36px;
+  border-radius: 44px;
+  display: flex;
   align-items: center;
+  gap: 18px;
   position: relative;
+  overflow-y: auto;
 }
-
-/* Box */
-
-/* LEFT SIDE */
 .popup-left,
 .popup-right {
   flex-basis: 50%;
 }
 .popup-left {
-  height: 100%;
-  /* background: linear-gradient(
-    145.69deg,
-    rgba(248, 172, 23, 0) -25.82%,
-    rgba(13, 110, 253, 0.2) 94.82%
-  ); */
-  padding: 44px 36px 0px 31px;
+  width: 29.11vw;
+  height: 79.35vh;
+
+  padding: 36px 40px;
   border-radius: 52px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   /* padding: 40px; */
-  background: linear-gradient(145.69deg, rgba(248, 172, 23, 0.2) -25.82%, rgba(13, 110, 253, 0.2) 60%);
+  background: linear-gradient(
+    145.69deg,
+    rgba(248, 172, 23, 0.2) -25.82%,
+    rgba(13, 110, 253, 0.2) 60%
+  );
 }
 
 .popup-left h2 {
-  font-size: 50px;
+  font-size: 44px;
   font-weight: 300;
   color: var(--black-second);
 }
 .popup-left h2 span {
-  font-size: 50px;
+  font-size: 44px;
   font-weight: 400;
   color: var(--black-second);
 }
@@ -2870,12 +2883,15 @@ footer .ft-bottom p {
   font-weight: 300;
   margin-bottom: 0;
 }
-.popup-left p strong{font-size: 24px;}
+.popup-left p strong {
+  font-size: 24px;
+}
 
 .info-box {
   background: var(--white);
   padding: 36px 30px;
   border-radius: 32px;
+  margin-top: 20px;
 }
 
 .info-box p {
@@ -2888,9 +2904,7 @@ footer .ft-bottom p {
   padding: 20px 0;
   align-items: center;
 }
-.info-box p::after {
-  content: "";
-  position: absolute;
+.info-box .info-box-line {
   background-color: #979797;
   height: 1px;
   width: 100%;
@@ -2922,7 +2936,7 @@ footer .ft-bottom p {
 }
 
 /* FORM */
-.popup-right form{
+.popup-right form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2949,20 +2963,20 @@ footer .ft-bottom p {
   border-radius: 15px;
   position: relative;
 }
-.popup-right .file-upload input{
+.popup-right .file-upload input {
   /* display: none; */
   opacity: 0;
   height: 100%;
   width: 100%;
   position: absolute;
 }
-.popup-right .file-upload span{
+.popup-right .file-upload span {
   display: flex;
   height: 60px;
   align-items: center;
   font-size: 20px;
   font-weight: 400;
-  color:#979797 ;
+  color: #979797;
 }
 .popup-right .file-upload .uplode-btn {
   background-color: #e3e3e6;
@@ -2976,10 +2990,10 @@ footer .ft-bottom p {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.popup-right .file-upload .uplode-btn span{
-   color: #979797;
-   font-weight: 500;
-   font-size: 20px;
+.popup-right .file-upload .uplode-btn span {
+  color: #979797;
+  font-weight: 500;
+  font-size: 20px;
 }
 .popup-right .file-upload input {
   padding: 0;
@@ -2990,12 +3004,11 @@ footer .ft-bottom p {
   background-color: red 500;
 }
 /* BUTTON */
-.popup-right form button{
+.popup-right form button {
   font-size: 20px;
   font-weight: 500;
   color: var(--black-second);
 }
-
 
 form button:hover {
   background: var(--orange-second);
@@ -3009,17 +3022,52 @@ form button:hover {
   cursor: pointer;
   font-size: 18px;
 }
+.popup-left h2,
+.popup-left h2 span {
+  font-size: 32px;
+}
+.popup-left p,
+.popup-left p strong {
+  font-size: 20px;
+}
 
-/* Small laptops / large tablets */
-@media (max-width:1440px) and (min-width:1025px){
-  .popup-box{
-    height: 80vh;
-    width: 65vw;
-    padding: 30px;
-    overflow-y: auto;
-    align-items: flex-start;
-  }
-  .popup-left{width:100%; height: auto; padding: 20px; gap: 10px;}
+.info-box p {
+  padding-bottom: 10px;
+}
+.popup-right h3 {
+  font-size: 32px;
+  line-height: 52px;
+}
+.popup-right form input {
+  height: 60px;
+}
+.popup-right form {
+  gap: 21px;
+}
+.popup-right form textarea {
+  height: 165px;
+}
+.popup-right .file-upload span,
+.popup-right .file-upload .uplode-btn {
+  height: 50px;
+}
+.popup-right form button {
+  padding: 20px 30px;
+  font-size: 16px;
+}
+.popup-right .file-upload span,
+.popup-right .file-upload .uplode-btn span {
+  font-size: 16px;
+}
+.popup-box .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* Small laptops / large tablets start */
+@media(max-width:1800px){
   .popup-left h2,.popup-left h2 span{
     font-size: 32px;
   }
@@ -3029,6 +3077,7 @@ form button:hover {
   .info-box{
     padding:15px 20px;
   }
+  .popup-box{ align-items: flex-start;}
   .info-box p {padding: 15px 0;}
   .popup-right h3{font-size: 20px;line-height: 32px;}
   .popup-right{gap: 10px;}
@@ -3039,66 +3088,40 @@ form button:hover {
   .popup-right form button{padding: 10px 20px; font-size: 16px;}
   .popup-right .file-upload span,.popup-right .file-upload .uplode-btn span{font-size: 16px;}
 }
-@media (max-width: 1024px) {
-  .popup-box {
-    max-width: 95%;
+@media (max-width:1800px) and (min-width:1200px){
+  .popup-box{
+    height: 64vh;
+    width: 50vw;
+    padding: 30px;
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+  .popup-left{width:100%; height: auto; padding: 20px; gap: 10px;}
+}
+@media (max-width:1200px){
+  .popup-box{
+    padding: 20px;
+  }
+  .popup-left{
+    padding: 10px 20px;
     height: auto;
-    max-height: 90vh;
-    padding: 24px;
-    border-radius: 32px;
+     border-radius: 30px;
   }
-
-  .popup-left {
-    padding: 24px 20px 40px 20px;
-    border-radius: 28px;
+}
+@media (max-width:1200px) and (min-width:1024px){
+  .popup-box{
+    width: 64vw;
+    height: 80vh;
+    align-items: flex-start;
+   
   }
-
-  .popup-left h2,
-  .popup-left h2 span {
-    font-size: 34px;
-  }
-
-  .popup-left p {
-    font-size: 18px;
-  }
-
-  .info-box {
-    padding: 24px 20px;
-    border-radius: 24px;
-  }
-
-  .info-box p {
-    font-size: 16px;
-    padding: 14px 0;
-  }
-
-  .popup-right h3 {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .popup-right form input,
-  .popup-right form textarea,
-  .popup-right .file-upload span,
-  .popup-right .file-upload .uplode-btn span {
-    font-size: 16px;
-  }
-
-  .popup-right form input,
-  .popup-right form textarea,
-  .popup-right .file-upload,
-  .popup-right .file-upload .uplode-btn,
-  .popup-right .file-upload span {
-    height: 50px;
-  }
-
-  .close-btn {
-    top: 16px;
-    right: 16px;
+}
+@media (max-width:1024px) and (min-width:768px){
+  .popup-box{
+    width: 80vw;
   }
 }
 
-/* Tablets and below */
 @media (max-width: 768px) {
   .chat-container{
     bottom:84px;
@@ -3253,8 +3276,9 @@ form button:hover {
     font-size: 12px;
   }
 }
+/* Small laptops / large tablets end */
 
-/* Responsive */
+/* pop up box css end  */
 
 @media (max-width: 1024px) {
   .website-development-services-random {
@@ -4270,8 +4294,8 @@ form button:hover {
     transition: color 0.3s;
   }
 
-  header nav ul li a:hover {
-    color: #ff7f00;
+  header nav ul li .active {
+    font-weight: 600;
   }
 
   header nav ul li {
