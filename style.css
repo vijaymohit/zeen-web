@@ -2833,7 +2833,7 @@ footer .ft-bottom p {
 .popup-box {
   background-color: white;
   width: 63.54vw;
-  height: 91vh;
+  max-height: 91vh;
   padding: 36px 40px 44px 36px;
   border-radius: 44px;
   display: flex;
@@ -3090,7 +3090,7 @@ form button:hover {
 }
 @media (max-width:1800px) and (min-width:1200px){
   .popup-box{
-    height: 90vh;
+    max-height: 90vh;
     width: 60vw;
     padding: 30px;
     overflow-y: auto;
@@ -3111,7 +3111,7 @@ form button:hover {
 @media (max-width:1200px) and (min-width:1024px){
   .popup-box{
     width: 67vw;
-    height: 90vh;
+    max-height: 90vh;
     align-items: flex-start;
    
   }
@@ -3119,7 +3119,7 @@ form button:hover {
 @media (max-width:1024px) and (min-width:768px){
   .popup-box{
     width: 80vw;
-    height: 85vh;
+    max-height: 85vh;
   }
 }
 
