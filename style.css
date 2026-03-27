@@ -2833,7 +2833,7 @@ footer .ft-bottom p {
 .popup-box {
   background-color: white;
   width: 63.54vw;
-  height: 86.67vh;
+  height: 91vh;
   padding: 36px 40px 44px 36px;
   border-radius: 44px;
   display: flex;
@@ -3090,8 +3090,8 @@ form button:hover {
 }
 @media (max-width:1800px) and (min-width:1200px){
   .popup-box{
-    height: 64vh;
-    width: 50vw;
+    height: 68vh;
+    width: 60vw;
     padding: 30px;
     overflow-y: auto;
     align-items: flex-start;
@@ -3119,6 +3119,7 @@ form button:hover {
 @media (max-width:1024px) and (min-width:768px){
   .popup-box{
     width: 80vw;
+    height: 66vh;
   }
 }
 
