@@ -2841,7 +2841,7 @@ footer .ft-bottom p {
     rgba(248, 172, 23, 0) -25.82%,
     rgba(13, 110, 253, 0.2) 94.82%
   ); */
-  padding: 44px 36px 228px 31px;
+  padding: 44px 36px 0px 31px;
   border-radius: 52px;
   display: flex;
   flex-direction: column;
@@ -3013,16 +3013,18 @@ form button:hover {
 /* Small laptops / large tablets */
 @media (max-width:1440px) and (min-width:1025px){
   .popup-box{
-    height: 666px;
-    width: 798px;
+    height: 80vh;
+    width: 65vw;
     padding: 30px;
+    overflow-y: auto;
+    align-items: flex-start;
   }
-  .popup-left{padding: 20px; gap: 10px;}
+  .popup-left{width:100%; height: auto; padding: 20px; gap: 10px;}
   .popup-left h2,.popup-left h2 span{
-    font-size: 40px;
+    font-size: 32px;
   }
   .popup-left p,.popup-left p strong{
-    font-size: 18px;
+    font-size: 16px;
   }
   .info-box{
     padding:15px 20px;
@@ -3030,9 +3032,9 @@ form button:hover {
   .info-box p {padding: 15px 0;}
   .popup-right h3{font-size: 20px;line-height: 32px;}
   .popup-right{gap: 10px;}
-  .popup-right form input{height: 50px;}
+  .popup-right form input{height: 40px;}
   .popup-right form{gap: 10px;}
-  .popup-right form textarea{height: 150px;}
+  .popup-right form textarea{height: 100px;}
   .popup-right .file-upload span, .popup-right .file-upload .uplode-btn{height: 50px;}
   .popup-right form button{padding: 10px 20px; font-size: 16px;}
   .popup-right .file-upload span,.popup-right .file-upload .uplode-btn span{font-size: 16px;}
