@@ -3090,7 +3090,7 @@ form button:hover {
 }
 @media (max-width:1800px) and (min-width:1200px){
   .popup-box{
-    height: 68vh;
+    height: 90vh;
     width: 60vw;
     padding: 30px;
     overflow-y: auto;
@@ -3110,8 +3110,8 @@ form button:hover {
 }
 @media (max-width:1200px) and (min-width:1024px){
   .popup-box{
-    width: 64vw;
-    height: 80vh;
+    width: 67vw;
+    height: 90vh;
     align-items: flex-start;
    
   }
@@ -3119,7 +3119,7 @@ form button:hover {
 @media (max-width:1024px) and (min-width:768px){
   .popup-box{
     width: 80vw;
-    height: 66vh;
+    height: 85vh;
   }
 }
 
