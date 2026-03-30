@@ -102,6 +102,32 @@ function silderFun(){
       }
       })
 
+       $('.type-web-app-container').owlCarousel({
+          loop:true,
+          // center:true,
+          items:2,
+          margin:20,
+          nav:true,
+          dots:true,
+          autoplay:true,
+          autoplayTimeout:3000,
+          autoplayHoverPause: true,  // Pause on hover (better UX)
+          smartSpeed: 500,  
+          URLhashListener:true, 
+          responsiveClass: true,        // Smooth transition speed
+          navText: [
+        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+      ],
+          responsive:{
+        0:{ items:1 },
+        480:{ items:1 },
+        768:{ items:2 },
+        1024:{ items:3 },
+        1440:{ items:3 },
+        2000:{ items:3 }
+      }
+      })
 
       $('.technology-stack-tab').owlCarousel({
           
@@ -172,6 +198,8 @@ function silderFun(){
        
       // })
 }
+
+
 $(window).on('load resize', silderFun);
 //slider run js end
 
@@ -189,9 +217,21 @@ document.querySelectorAll('.contact-us-link').forEach(link => {
   });
 });
 //link button add end
+
+function showMessages(){
+  const messageBox = document.getElementById("messageBox");
+  messageBox.style.display = 'block'
+}
+function closeMessage(){
+   const messageBox = document.getElementById("messageBox");
+  messageBox.style.display = 'none'
+}
+
 function toggleChat() {
   const chat = document.getElementById("chatBox");
   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+  closeMessage()
+  closePopup()
 }
 
 
@@ -200,7 +240,11 @@ function closePopup() {
 }
 setTimeout(() => {
   openPopup()
-}, 3000);
+}, 2500);
+
+setTimeout(() => {
+  showMessages()
+}, 4500);
 function openPopup(){
   document.getElementById("popup").style.display = 'flex'
 }
@@ -302,53 +346,55 @@ const mapContainer = document.querySelector('.map-main')
     });
   });
 
+// chatbot system message start
+const chatBody = document.querySelector('.chat-body')
+const userMessage = document.querySelector('.chat-footer input')
+document.querySelector('.chat-message-send').addEventListener('click',chatsendMessage)
+const BotM = document.createElement('div')
+BotM.textContent = 'Hello 👋 How can I help you?'
+chatBody.appendChild(BotM)
+function chatsendMessage(){
+  const userM = document.createElement('div')
+  const BotM = document.createElement('div')
+  BotM.textContent = 'Thanks! Our team will get back to you shortly.'
+   userM.textContent = userMessage.value;
+   userM.classList.add('user')
+   userM.classList.add('message')
+   BotM.classList.add('bot')
+   BotM.classList.add('message')
+  // append to chat body
+  chatBody.appendChild(userM);
+  
+  setTimeout(()=>{
+
+    chatBody.appendChild(BotM)
+  },500)
+  // clear input
+  userMessage.value = '';
+}
+// chatbot system message end
+
 //typing in home page start
 
-const texts = ["Web Development", "App Development", "AI Chatbots"];
-let i = 0;
-let charIndex = 0;
-let currentText = "";
-let isDeleting = false;
 
-function type() {
-  const el = document.getElementById("typed");
 
-  currentText = texts[i];
-
-  if (!isDeleting) {
-    charIndex++;
-
-    el.textContent = currentText.substring(0, charIndex);
-
-    // ✅ Trigger fade-in when a WORD COMPLETES (space detected)
-    if (charIndex < currentText.length && currentText.charAt(charIndex - 1) === " ") {
-      el.classList.remove("fade-in");
-      void el.offsetWidth; // Trigger reflow
-      el.classList.add("fade-in");
-    }
-
-    if (charIndex === currentText.length) {
-      isDeleting = true;
-      setTimeout(type, 1000); // Pause at end before deleting
-      return;
-    }
-
-  } else {
-    charIndex--;
-
-    el.textContent = currentText.substring(0, charIndex);
-
-    if (charIndex === 0) {
-      isDeleting = false;
-      i = (i + 1) % texts.length;
-    }
-  }
-
-  setTimeout(type, isDeleting ? 50 : 100);
-}
-
-type();
-
+let titleMessage = document.querySelector('title');
+let originalTitle = document.title;
+let notifications = document.querySelector('.notifications')
+setInterval(() => {
+  notifications.style.display = 'block'
+  document.title =
+    document.title === originalTitle
+      ? '1 new message'
+      : originalTitle;
+}, 3000);
+let typed = new Typed('#typed', {
+  strings: ["Web Development", "App Development", "AI Chatbots"],
+  typeSpeed: 150,
+  backSpeed: 70,
+  loop: true,
+  showCursor: false
+});
 
 //typing in home page end
 
