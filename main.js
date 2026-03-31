@@ -89,8 +89,8 @@ function silderFun(){
           URLhashListener:true, 
           responsiveClass: true,        // Smooth transition speed
           navText: [
-        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+        '<img loading="lazy" src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+          '<img loading="lazy" src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
       ],
           responsive:{
         0:{ items:1 },
@@ -116,8 +116,8 @@ function silderFun(){
           URLhashListener:true, 
           responsiveClass: true,        // Smooth transition speed
           navText: [
-        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+        '<img loading="lazy" src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+          '<img loading="lazy" src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
       ],
           responsive:{
         0:{ items:1 },
@@ -140,8 +140,8 @@ function silderFun(){
           smartSpeed: 500,  
           URLhashListener:true,         // Smooth transition speed
           navText: [
-        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+        '<img loading="lazy" src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+          '<img loading="lazy" src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
       ],
         responsive:{
         0:{ items:1 },
@@ -167,8 +167,8 @@ function silderFun(){
           URLhashListener:true,  
             items:2,    
           navText: [
-        '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-          '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+        '<img loading="lazy" src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+          '<img loading="lazy" src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
       ],
         responsive:{
         0:{ items:1 },
@@ -192,8 +192,8 @@ function silderFun(){
       //     URLhashListener:true,  
       //       items:1,    
       //     navText: [
-      //   '<img src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
-      //     '<img src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
+      //   '<img loading="lazy" src="assets/images/icons/arrow-left.png" alt="Prev" width="24" height="24">',
+      //     '<img loading="lazy" src="assets/images/icons/arrow-right.png" alt="Next" width="24" height="24">'
       // ],
        
       // })
@@ -387,7 +387,7 @@ setInterval(() => {
     document.title === originalTitle
       ? '1 new message'
       : originalTitle;
-}, 3000);
+}, 2000);
 let typed = new Typed('#typed', {
   strings: ["Web Development", "App Development", "AI Chatbots"],
   typeSpeed: 150,
