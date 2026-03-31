@@ -2474,7 +2474,7 @@ footer .ft-bottom p {
 
 /* WEB DEVELOPMENT COMPANY PAGE CSS START */
 .web-application-development-main .home-section{
- background-image: url(assets/images/services/web-application-development/hero.jpg) !important;
+ background-image: url(assets/images/services/web-application-development/hero.webp) !important;
 }
 .web-application-development-main .website-development-service-card:nth-child(4){
   grid-column: span 3;
