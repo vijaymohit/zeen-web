@@ -405,7 +405,8 @@ p,
 }
 
 .close-btn:hover {
-  color: red;
+  color: black;
+  font-weight: 600;
 }
 
 @keyframes fadeIn {
@@ -1822,7 +1823,7 @@ footer .ft-grid .ft-brand p {
   line-height: 32px;
   margin-top: 50px;
   margin-bottom: 0;
-  width: 150px;
+  /* width: 150px; */
   font-weight: 300;
 }
 
@@ -2609,10 +2610,13 @@ footer .ft-bottom p {
 .website-development-services {
   position: relative;
 }
+.web-application-development-main  .website-development-services-random{
+  height: 1027px !important;
+}
 .website-development-services .website-development-services-random {
   position: absolute;
+  height: 1431px;
   width: 100%;
-  height: 1027px;
   top: -5%;
   left: 0;
   display: flex;
@@ -3597,6 +3601,50 @@ form button:hover {
   }
 }
 @media (max-width: 768px) {
+ .header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  /* dropdown menu in mobile */
+  .modern-dropdown .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    display: none;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  /* show dropdown when open */
+  .modern-dropdown.show .dropdown-menu {
+    display: block;
+  }
+
+  .modern-dropdown .dropdown-menu li {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .modern-dropdown .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+  }
+  .modern-dropdown li:nth-child(1){margin-bottom: 0;}
+  .modern-menu li a{
+    padding:10px 0 !important;
+  }
+
   .data-protection-grid{
     grid-template-columns: repeat(2,1fr);
   }
@@ -3632,6 +3680,9 @@ form button:hover {
   }
   .website-development-company-main .home-section {
     height: 100%;
+  }
+  .choose-us .btn-yellow span{
+    font-size: 14px;
   }
   .technology-stack-main,
   .solutions,
@@ -3742,6 +3793,7 @@ form button:hover {
   .website-development-service-card {
     padding: 20px !important;
   }
+  header nav ul{gap: 20px;}
   .process .process-random {
     display: none;
   }
@@ -4119,7 +4171,7 @@ form button:hover {
     padding: 15px 30px;
   }
   header nav ul {
-    gap: 30px;
+    gap: 20px;
   }
   p {
     font-size: 15px !important;
@@ -4521,6 +4573,7 @@ form button:hover {
     padding: 80px 40px !important;
     overflow-y: auto;
     z-index: 999;
+    gap: 20px;
     transition: transform 0.5s ease;
     transform: translateX(-100%);
   }
@@ -4540,7 +4593,20 @@ form button:hover {
     display: block;
     cursor: pointer;
   }
+ .modern-dropdown .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    padding-left: 10px;
+    height: 100%;
+  }
+    .nav-btn-custom {
+    display: none;
+  }
 
+  .modern-dropdown.active .dropdown-menu {
+    display: block;
+  }
   /* Mobile Menu */
   header nav ul {
     display: none;
