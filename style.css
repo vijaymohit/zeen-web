@@ -2604,7 +2604,10 @@ footer .ft-bottom p {
   background-color: #FFFAEF96;
 }
  .contact-us .website-development-image{flex-basis: 40% !important;height: 548px; width: 100%;}
- .contact-us .website-development-image img{width: 100%; height: 100%; border-radius: 80px;}
+ .contact-us .website-development-text a{margin-top: 10px;}
+.contact-us .website-development-text a svg path {
+  stroke: black;
+} .contact-us .website-development-image img{width: 100%; height: 100%; border-radius: 80px;}
 .contact-us .website-development-text{flex-basis: 60% !important;}
 .contact-our-office{
   background-color: #F4F4F9 !important;
@@ -3105,7 +3108,7 @@ z-index: 3;
 }
 .popup-left {
   width: 29.11vw;
-  height: 79.35vh;
+  height: 40vh;
 
   padding: 36px 40px;
   border-radius: 52px;
@@ -3409,7 +3412,7 @@ form button:hover {
 /* Small laptops / large tablets start */
 @media(max-width:1800px){
   .popup-left h2,.popup-left h2 span{
-    font-size: 32px;
+    font-size: 32px !important;
   }
   .popup-left p,.popup-left p strong{
     font-size: 16px;
@@ -3509,7 +3512,7 @@ form button:hover {
 
   .popup-left h2,
   .popup-left h2 span {
-    font-size: 26px;
+    font-size: 26px !important;
   }
 
   .popup-left strong {
