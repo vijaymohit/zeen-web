@@ -384,10 +384,12 @@ p,
 
   animation: fadeIn 0.4s ease;
 }
-
+.message-box strong{color: #000; font-weight: 600 !important;}
 .message-box p {
   margin: 0;
   color: var(--black-second);
+  font-size: clamp(0.875rem, 2vw, 1rem) !important;
+  line-height: 25px !important;
 }
 .message-box p i{color: rgb(67, 126, 255);}
 
@@ -1786,7 +1788,7 @@ header .nav-btn {
   margin-bottom: 15px; */
 }
 
-.contact-us-main .container .contact-us-form button {
+.contact-us-main .container .contact-us-form a {
   background-color: var(--orange);
   color: var(--black-second);
   width: fit-content;
@@ -1798,7 +1800,7 @@ header .nav-btn {
   font-size: 18px;
   
 }
-.contact-us-main .container .contact-us-form button svg path{
+.contact-us-main .container .contact-us-form a svg path{
   stroke: var(--black-second);
 }
 /* ----- FOOTER ----- */
@@ -2487,6 +2489,15 @@ footer .ft-bottom p {
 .web-application-development-main .website-development-service-card:nth-child(4) .service-card{
   flex-basis: 50%;
 }
+.contact-us .home-section{
+   background-image: url(assets/images/contact-us/hero.webp) !important;
+   height: 595px !important;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+.contact-us .home-section .container {justify-content: center !important;}
+
 .website-development-company-main .home-section {
   background-image: url(assets/images/services/website-development-company/hero-image.webp);
   background-position: center;
@@ -2575,12 +2586,67 @@ footer .ft-bottom p {
   .home-section-main
   .hero-btn-custom
   button
+  span ,.website-development-company-main
+  .home-section
+  .container
+  .home-section-main
+  .hero-btn-custom
+  a
   span {
   font-size: 20px;
 }
 .website-development {
   padding: 80px 0;
   position: relative;
+}
+
+.contact-us .website-development{
+  background-color: #FFFAEF96;
+}
+ .contact-us .website-development-image{flex-basis: 40% !important;height: 548px; width: 100%;}
+ .contact-us .website-development-image img{width: 100%; height: 100%; border-radius: 80px;}
+.contact-us .website-development-text{flex-basis: 60% !important;}
+.contact-our-office{
+  background-color: #F4F4F9 !important;
+}
+.contact-our-office h2,.contact-our-office h2 span{font-size: 54px !important;}
+.contact-our-office h2 span{color: #F8B552 !important;}
+.contact-our-office .website-development-main{gap: 56px;}
+.contact-us-2  .map .overlay {
+z-index: 3;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(27, 27, 27, 0.336);
+}
+.contact-our-office .website-development-image{flex-basis: 50% !important; height: 541px !important; width: 100% !important;}
+.contact-our-office .website-development-image img{width: 100% !important;height: 541px !important; border-radius: 32px;}
+.contact-our-office .contact-card{background-color: white; display: flex; gap: 20px; padding: 20px 16px; border-radius: 12px; align-items: center;}
+.contact-our-office .contact-card p{font-size: 24px;line-height: 32px; font-weight: 400; margin-bottom: 1px; color: var(--black-second);}
+.contact-our-office .contact-card p.phone{font-weight: 600;}
+.contact-our-office .website-development-text{flex-basis: 50%  !important;}
+.contact-us-2 .map{padding: 0; border-radius: 0; border: 0; z-index: -1; height: 100%;}
+.contact-us-2   .map .map-main{border-radius: 0; z-index: 1;}
+.contact-us-2 .contact-us-form{z-index: 5;position: relative; background-color: rgba(255, 255, 255, 0.74) !important;}
+@media (max-width:768px) {
+  .contact-us .home-section{
+    height: 100% !important;
+  }
+  .website-development-company-main .home-section .home-section-random svg{
+    height: 40px;
+    width: 40px;
+  }
+  .contact-our-office .website-development-image,.contact-our-office .website-development-image img{
+    height: 100% !important;
+  }
+  .contact-our-office .website-development-main{
+    gap: 20px;
+  }
+  .contact-us-2 .contact-us-main{
+    border-radius: 0px !important;
+  }
 }
 .website-development-main {
   gap: 20px;
@@ -2902,7 +2968,7 @@ footer .ft-bottom p {
 .launch-website-btn {
   gap: 16px;
 }
-.launch-website-btn button {
+.launch-website-btn button,.launch-website-btn a {
   font-size: 20px;
 }
 
@@ -3215,7 +3281,7 @@ form button:hover {
 }
 .popup-left h2,
 .popup-left h2 span {
-  font-size: 32px;
+  font-size: 32px !important;
 }
 .popup-left p,
 .popup-left p strong {
@@ -3699,7 +3765,7 @@ form button:hover {
   .industries .container .industries-card-main .industrie-card {
     height: 400px;
   }
-  .launch-website-btn button {
+  .launch-website-btn button,.launch-website-btn a {
     font-size: 14px;
   }
   .website-development-services .container .website-development-services-grid .website-development-service-card{grid-column: span 1;}
@@ -3885,7 +3951,7 @@ form button:hover {
   .launch-website .container .launch-website-main .launch-website-text {
     gap: 10px;
   }
-  .launch-website .container .launch-website-main .launch-website-btn button {
+  .launch-website .container .launch-website-main .launch-website-btn button ,.launch-website-btn a{
     font-size: 14px;
   }
   .launch-website-btn {
@@ -5719,7 +5785,7 @@ form button:hover {
     font-size: 14px;
   }
 
-  .contact-us-main .container .contact-us-form button {
+  .contact-us-main .container .contact-us-form a {
     padding: 12px 25px;
     font-size: 14px;
   }
